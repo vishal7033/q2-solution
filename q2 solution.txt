@@ -1,0 +1,13 @@
+CREATE TABLE Product (
+    id INT PRIMARY KEY,
+    name VARCHAR(255),
+    category_id INT,
+    FOREIGN KEY (category_id) REFERENCES Product_Category(category_id)
+);
+
+
+-- Example of inserting a valid product
+INSERT INTO Product (id, name, category_id) VALUES (1, 'ProductA', 101);
+
+-- Example of updating the category_id of a product
+UPDATE Product SET category_id = 102 WHERE id = 1;
